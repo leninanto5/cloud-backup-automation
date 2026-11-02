@@ -1,0 +1,44 @@
+# ---------------- Cloud Backup Automation settings ----------------
+
+backup_name: my-backup
+
+# Folders or files to back up.
+# "." means this project folder. Change it to your own folders, for example:
+#   - C:/Users/YourName/Documents
+sources:
+  - .
+
+# Files and folders that are NOT backed up (names or patterns)
+exclude:
+  - backups
+  - restored
+  - .git
+  - venv
+  - __pycache__
+  - "*.log"
+  - "*.tmp"
+
+# Where the backup is stored: "local" (a folder) or "s3" (Amazon S3)
+destination:
+  type: local
+  local_path: ./backups
+  s3:
+    bucket: your-bucket-name
+    prefix: backups/
+    region: ap-south-1
+
+# Keep only the newest N backups, older ones are deleted automatically
+retention:
+  keep_last: 5
+
+# Time for the daily automatic backup (24-hour format)
+schedule:
+  time: "02:00"
+
+# Backup report generated after every run
+report:
+  template: templates/report_template.txt
+  save_to: ./backups/reports
+
+logging:
+  file: backup.log

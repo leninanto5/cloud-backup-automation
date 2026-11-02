@@ -1,0 +1,23 @@
+==================================================
+            CLOUD BACKUP REPORT
+==================================================
+Backup name      : $backup_name
+Date and time    : $timestamp
+Status           : $status
+
+--------------------------------------------------
+Files backed up  : $files_count
+Original size    : $original_size
+Archive size     : $archive_size
+Compression      : $compression
+Archive name     : $archive_name
+SHA-256 checksum : $checksum
+
+--------------------------------------------------
+Stored at        : $location
+Old backups removed : $deleted_count
+Duration         : $duration seconds
+
+--------------------------------------------------
+Notes            : $notes
+==================================================
